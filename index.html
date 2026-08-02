@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>全球食品產業鏈極限週報 | 2026-08-02</title>
+<style>
+  :root{
+    --bg:#0a0a0c;
+    --bg-panel:#131316;
+    --bg-card:#18181c;
+    --border:#2a2a30;
+    --text:#e4e4e7;
+    --text-dim:#8b8b93;
+    --blue:#00F3FF;
+    --green:#CCFF00;
+    --red:#FF3131;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--text);
+    font-family:"Noto Sans TC","PingFang TC","Microsoft JhengHei",-apple-system,sans-serif;
+    line-height:1.6;
+    padding-bottom:80px;
+  }
+  header{
+    padding:36px 24px 28px;
+    background:linear-gradient(180deg, #101014 0%, #0a0a0c 100%);
+    border-bottom:1px solid var(--border);
+    position:relative;
+    overflow:hidden;
+  }
+  header::before{
+    content:"";
+    position:absolute;
+    top:-50%;left:-10%;
+    width:60%;height:200%;
+    background:radial-gradient(circle, rgba(0,243,255,0.06) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  header::after{
+    content:"";
+    position:absolute;
+    bottom:-50%;right:-10%;
+    width:50%;height:200%;
+    background:radial-gradient(circle, rgba(204,255,0,0.05) 0%, transparent 70%);
+    pointer-events:none;
+  }
+  .header-inner{max-width:1200px;margin:0 auto;position:relative;z-index:1;}
+  .eyebrow{
+    color:var(--blue);
+    font-size:12px;
+    letter-spacing:3px;
+    font-weight:700;
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  h1{
+    font-size:clamp(24px,4vw,38px);
+    font-weight:900;
+    letter-spacing:1px;
+    background:linear-gradient(90deg,#fff 30%,var(--blue) 100%);
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
+  .meta-row{
+    display:flex;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-top:14px;
+    font-size:13px;
+    color:var(--text-dim);
+  }
+  .meta-row span{
+    display:inline-flex;
+    align-items:center;
+    gap:6px;
+    padding:5px 12px;
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:20px;
+  }
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--blue);box-shadow:0 0 8px var(--blue);}
+
+  .legend{
+    max-width:1200px;margin:20px auto 0;padding:0 24px;
+    display:flex;gap:16px;flex-wrap:wrap;font-size:12px;color:var(--text-dim);
+  }
+  .legend span{display:inline-flex;align-items:center;gap:6px;}
+  .legend i{width:10px;height:10px;border-radius:2px;display:inline-block;}
+
+  main{max-width:1200px;margin:0 auto;padding:32px 24px;}
+
+  section.block{margin-bottom:56px;scroll-margin-top:90px;}
+  .block-header{
+    display:flex;align-items:baseline;gap:14px;
+    margin-bottom:6px;padding-bottom:14px;
+    border-bottom:2px solid var(--border);
+  }
+  .block-num{
+    font-size:13px;font-weight:800;color:var(--bg);
+    background:var(--blue);
+    padding:3px 10px;border-radius:4px;
+    letter-spacing:1px;
+  }
+  .block-header h2{font-size:20px;font-weight:800;letter-spacing:0.5px;}
+  .block-sub{color:var(--text-dim);font-size:13px;margin-bottom:22px;margin-top:6px;}
+
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fill, minmax(360px,1fr));
+    gap:16px;
+  }
+  .card{
+    background:var(--bg-card);
+    border:1px solid var(--border);
+    border-left:3px solid var(--blue);
+    border-radius:8px;
+    padding:18px 20px;
+    transition:transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+  }
+  .card:hover{
+    transform:translateY(-2px);
+    box-shadow:0 8px 24px rgba(0,0,0,0.4);
+    border-color:#3a3a42;
+  }
+  .card.tag-risk{border-left-color:var(--red);}
+  .card.tag-opportunity{border-left-color:var(--green);}
+  .card.tag-data{border-left-color:var(--blue);}
+
+  .card-date{
+    font-size:11px;font-weight:700;letter-spacing:1px;
+    color:var(--text-dim);
+    margin-bottom:8px;
+    display:flex;align-items:center;gap:8px;
+  }
+  .tag-pill{
+    font-size:10px;font-weight:800;padding:2px 8px;border-radius:10px;
+    letter-spacing:0.5px;
+  }
+  .tag-risk .tag-pill{background:rgba(255,49,49,0.15);color:var(--red);}
+  .tag-opportunity .tag-pill{background:rgba(204,255,0,0.15);color:var(--green);}
+  .tag-data .tag-pill{background:rgba(0,243,255,0.15);color:var(--blue);}
+
+  .card h3{
+    font-size:15.5px;font-weight:700;color:#fff;
+    margin-bottom:10px;line-height:1.45;
+  }
+  .card a.source-link{
+    display:inline-flex;align-items:center;gap:5px;
+    font-size:12px;color:var(--blue);text-decoration:none;
+    margin-bottom:12px;
+    border-bottom:1px dashed rgba(0,243,255,0.4);
+    word-break:break-all;
+  }
+  .card a.source-link:hover{color:#7dfaff;}
+
+  .card-block{margin-top:10px;}
+  .card-block .label{
+    font-size:10.5px;font-weight:800;letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:4px;
+  }
+  .card-block.summary .label{color:var(--blue);}
+  .card-block.application .label{color:var(--green);}
+  .card-block p{font-size:13px;color:#c8c8ce;}
+
+  .weekly-summary{
+    background:var(--bg-panel);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:18px 20px;
+    margin-top:20px;
+    font-size:13.5px;
+    color:#c8c8ce;
+    position:relative;
+  }
+  .weekly-summary::before{
+    content:"週摘要";
+    position:absolute;top:-11px;left:16px;
+    background:var(--bg-panel);
+    padding:0 8px;
+    font-size:11px;font-weight:800;color:var(--blue);letter-spacing:2px;
+  }
+
+  .nav-float{
+    position:fixed;
+    right:22px;top:50%;
+    transform:translateY(-50%);
+    display:flex;flex-direction:column;gap:12px;
+    z-index:100;
+  }
+  .nav-btn{
+    width:52px;height:52px;
+    border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    font-size:11px;font-weight:800;
+    cursor:pointer;
+    border:2px solid;
+    background:var(--bg-panel);
+    text-align:center;
+    transition:all .15s ease;
+    box-shadow:0 4px 16px rgba(0,0,0,0.5);
+  }
+  .nav-btn:hover{transform:scale(1.1);}
+  .nav-btn.b1{border-color:var(--blue);color:var(--blue);}
+  .nav-btn.b1:hover{background:var(--blue);color:#000;}
+  .nav-btn.b2{border-color:var(--green);color:var(--green);}
+  .nav-btn.b2:hover{background:var(--green);color:#000;}
+  .nav-btn.b3{border-color:var(--red);color:var(--red);}
+  .nav-btn.b3:hover{background:var(--red);color:#000;}
+  .nav-btn.top{border-color:var(--text-dim);color:var(--text-dim);font-size:16px;}
+  .nav-btn.top:hover{background:var(--text-dim);color:#000;}
+
+  footer{
+    text-align:center;padding:30px 24px;color:var(--text-dim);font-size:12px;
+    border-top:1px solid var(--border);margin-top:20px;
+  }
+
+  @media (max-width:640px){
+    .nav-float{right:10px;gap:8px;}
+    .nav-btn{width:42px;height:42px;font-size:9px;}
+    .card-grid{grid-template-columns:1fr;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="eyebrow">Global Food Chain Intelligence // Deep Track</div>
+    <h1>全球食品產業鏈極限週報</h1>
+    <div class="meta-row">
+      <span><span class="dot"></span>資料更新日期：2026-08-02</span>
+      <span>追蹤週期：2026-07-26 ～ 2026-08-02</span>
+      <span>受眾：研發型全球市場開發業務</span>
+    </div>
+  </div>
+</header>
+
+<div class="legend">
+  <span><i style="background:var(--blue)"></i>螢光藍 = 數據指標 / 財務數字</span>
+  <span><i style="background:var(--green)"></i>萊姆綠 = 新品機會 / 護城河</span>
+  <span><i style="background:var(--red)"></i>警戒紅 = 供應鏈風險 / 併購動盪</span>
+</div>
+
+<main>
+
+  <!-- 區塊一 -->
+  <section class="block" id="block1">
+    <div class="block-header">
+      <span class="block-num">01</span>
+      <h2>科學底層機制與原料情報</h2>
+    </div>
+    <div class="block-sub">Scientific Deep-Dive — 膠體、澱粉、纖維、酵素與肉類原料的技術突破與供應鏈韌性</div>
+
+    <div class="card-grid">
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-07-28 <span class="tag-pill">併購</span></div>
+        <h3>Tate & Lyle股東通過Ingredion 57.5億美元全現金收購案</h3>
+        <a class="source-link" href="https://www.globenewswire.com/news-release/2026/07/28/3334763/0/en/Ingredion-s-595-pence-All-Cash-Offer-to-Acquire-Tate-Lyle-Accepted-by-Their-Shareholders.html" target="_blank">GlobeNewswire ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>交易企業價值約37億英鎊，將Ingredion變性澱粉/質地平台與Tate & Lyle的Promitor可溶性纖維、Sta-Lite聚葡萄糖等技術整合，年化成本綜效約1.3億美元，完成時點延後至2027下半年。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>合併後SKU理性化風險升高，建議提前鎖定關鍵配方用特種澱粉/纖維的長約，並評估AVEBE、KMC、JRS作為備援供應商。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-29 <span class="tag-pill">財報</span></div>
+        <h3>Kerry Group H1營收33億歐元，Tastesense減糖遮味平台成成長引擎</h3>
+        <a class="source-link" href="https://www.nutritioninsight.com/news/kerry-half-year-results-protein-enzymes-food.html" target="_blank">NutritionInsight ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Tastesense™ Advanced在不用人工甜味劑下減糖達80%，技術邏輯為風味修飾分子遮蔽蔗糖去除後的苦味/金屬味缺口，而非單純添加代糖；資本支出重心轉向效率而非擴產。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>可作為高蛋白飲品/棒類減糖遮味系統的技術對比基準；議價時可利用其資本支出聚焦效率這點爭取價格穩定承諾。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-08-01 <span class="tag-pill">財報</span></div>
+        <h3>Nitta Gelatin India Q1淨利年增31.35%，印度SION骨料投入比下修</h3>
+        <a class="source-link" href="https://www.business-standard.com/amp/markets/capital-market-news/nitta-gelatin-india-consolidated-net-profit-rises-31-35-in-the-june-2026-quarter-126080100135_1.html" target="_blank">Business Standard ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>印度官方SION標準將明膠投入比下修至3.92噸骨料/噸明膠，骨粉投入比訂為2.24噸/噸，直接影響進口牛骨關稅退稅與採購成本結構。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>投入比下修代表單位明膠所需骨料投入量被官方認定下降，可作為向印度供應商重新核算到岸成本、要求價格下修的量化依據。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-07-21 <span class="tag-pill">原料風險</span></div>
+        <h3>泰國樹薯澱粉FOB價半年飆漲近五成至700美元/噸</h3>
+        <a class="source-link" href="https://www.tridge.com/market-overview/cassava-starch/TH#price" target="_blank">Tridge ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>FOB曼谷價自2025年12月470美元/噸彈升至700美元/噸（+49%），主因乾旱、木薯嵌紋病毒與種莖短缺三重疊加；泰國樹薯澱粉廠產能利用率僅約62%。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>樹薯變性澱粉配方應將原料成本上升近五成的風險納入年度採購合約重新議價，並評估玉米/馬鈴薯澱粉替代比例分散氣候風險。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-14公布（財報8/4發布） <span class="tag-pill">財報預告</span></div>
+        <h3>Ingredion確認8月4日發布Q2財報，緊接收購股東投票</h3>
+        <a class="source-link" href="https://www.globenewswire.com/news-release/2026/07/14/3327258/0/en/ingredion-to-release-2026-second-quarter-financial-results-on-august-4-2026.html" target="_blank">GlobeNewswire ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>財報時點與Tate & Lyle收購股東投票（7/28通過）緊密銜接，市場關注玉米濕磨產能利用率與整併後「特種澱粉+纖維」聯合產品線資本支出計畫。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>建議關注8/4法說會管理層對整併後定價策略的指引，作為下一輪配方成本模型更新依據。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-06-26 <span class="tag-pill">產能擴張</span></div>
+        <h3>KMC丹麥Brande馬鈴薯澱粉顆粒廠封頂，投資6,700萬歐元擴產</h3>
+        <a class="source-link" href="https://www.kmc.dk/kmc-news/tag/potato-starch" target="_blank">KMC官方新聞 ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>擴建聚焦馬鈴薯顆粒/薄片產能，預計2026秋季完工；同期與Daymer Ingredients簽署英國經銷協議強化下游通路。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>馬鈴薯澱粉供應端正同步擴產，可作為與KMC洽談2026秋季後新增產能優先供貨權的切入點。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-06-27 <span class="tag-pill">原料風險</span></div>
+        <h3>歐洲熱浪衝擊核心馬鈴薯產區，估計減產10-15%</h3>
+        <a class="source-link" href="https://www.potatonewstoday.com/2026/06/27/europes-heatwave-puts-potato-crops-under-pressure-as-spain-reports-early-yield-concerns/" target="_blank">PotatoNewsToday ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>荷比法德6月底氣溫突破40°C，恰逢薯塊膨大關鍵期；荷蘭單位產量預估43.3噸/公頃（-6%），高溫誘發乾物質含量下降直接降低澱粉萃取率，歐洲種植面積較2025年減少11%。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>高直鏈澱粉/羥丙基化改質澱粉2026下半年至2027上半年採購成本應預留10-15%以上漲幅緩衝，建議提前鎖定跨年度合約價。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026年6月中旬 <span class="tag-pill">原料數據</span></div>
+        <h3>中國玉米澱粉價格穩定於425美元/噸，成短期替代原料首選</h3>
+        <a class="source-link" href="https://www.foodadditivesasia.com/en/market-insights/supply-chain/corn-starch-market-summary-mid-may-2026-balanced-supply-mild-firmness" target="_blank">FoodAdditivesAsia ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Q1均價416美元/噸，6月升至425美元/噸（+2%），濕磨產能利用率正常，未受東南亞樹薯/歐洲馬鈴薯同等氣候衝擊。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>在樹薯與馬鈴薯澱粉雙雙漲價之際，玉米澱粉價格穩定性使其成為短期替代原料優先評估對象，尤其適用增稠/黏結應用。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-06-22~25 <span class="tag-pill">技術突破</span></div>
+        <h3>GELITA發表MEDELLAPRO超低內毒素明膠（&lt;10 EU/g）</h3>
+        <a class="source-link" href="https://www.prnewswire.com/news-releases/gelita-unveils-next-generation-excipient-innovations-at-bio-international-2026-in-san-diego-302798530.html" target="_blank">PR Newswire ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>屬GELITA「Endotoxin Controlled Excipients」產品線延伸，內毒素控制&lt;10 EU/g，對應骨/皮革前處理去雜蛋白純化工藝等級提升，目標應用為生物列印與疫苗穩定劑。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>醫藥級內毒素控制技術延伸，代表食品級明膠產線雜質控制基準線同步提升，可作為高階保健膠囊/軟糖明膠品質談判籌碼。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026年6月 <span class="tag-pill">供應鏈風險</span></div>
+        <h3>Danish Crown牛源競爭加劇，牛肉事業裁員800人</h3>
+        <a class="source-link" href="https://www.thepigsite.com/news/2026/06/danish-crown-to-cut-800-jobs-in-restructuring-push" target="_blank">ThePigSite ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>德國與丹麥境內可屠宰牛隻數量減少，牛源採購競爭推升成本壓縮毛利率；公司同步推進Vejen新去骨廠（10/1投產），資源正從牛肉轉向豬肉/亞洲出口。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>採購牛源膠原蛋白/明膠原料或牛肉加工副產物時，應留意丹麥/德國牛隻供給緊縮對副產物價格的傳導效應，提前確認下半年供貨量能。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026年中 <span class="tag-pill">產能里程碑</span></div>
+        <h3>Hormel中國嘉興肉類零食廠邁向滿產，導入o9 AI供應鏈平台</h3>
+        <a class="source-link" href="https://www.investing.com/news/transcripts/hormel-foods-at-cagny-2026-strategic-growth-amid-challenges-93CH-4512415" target="_blank">Investing.com ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>「Transform & Modernize」計畫目標三年新增2.5億美元年化營業利益，已於逾70個廠區導入o9 AI需求/供給規劃平台；嘉興新廠聚焦零食型態肉品加工。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>亞洲零食化肉品對保水性(WHC)與黏結劑技術規格要求更高，可作為向Hormel供應鏈推銷高機能性澱粉/纖維方案的切入點。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026年6月（ISM & ProSweets） <span class="tag-pill">技術突破</span></div>
+        <h3>AVEBE展示快速凝結馬鈴薯澱粉應用於植物基軟糖</h3>
+        <a class="source-link" href="https://www.foodingredientsfirst.com/video/ism-prosweets-2026-live-avebe-showcases-fast-setting-potato-starch-for-scalable-vegan-gummies.html" target="_blank">FoodIngredientsFirst ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>訴求更快凝結與乾燥，技術邏輯應為調整支鏈/直鏈澱粉比例或預糊化處理，縮短軟糖模鑄產線凝膠化與脫水時間；新聞未提供具體黏度或凝膠化時間數值。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>若評估縮短乾燥時間提升日產量，可要求AVEBE提供凝膠化時間與黏度-剪切曲線實測數據，量化產線週轉率提升幅度後再決定是否換料。</p></div>
+      </div>
+
+    </div>
+
+    <div class="weekly-summary">
+      本週最大變數為Ingredion以50億美元收購Tate & Lyle獲股東通過（7/28），將重塑澱粉與纖維供應版圖；氣候風險同步發威——泰國樹薯因乾旱與病毒病使FOB價半年內飆漲近五成，歐洲熱浪則使馬鈴薯減產10-15%，唯獨中國玉米澱粉維持穩定，成為短期替代選項；印度明膠SION骨料投入比下修，牛源副產物則受Danish Crown縮減牛肉產能影響；Kerry、Hormel雙雙加碼酵素/AI供應鏈效率投資。
+      <br><br>
+      <span style="color:var(--text-dim);font-size:12px;">備註：過去7-30天內查無可驗證新聞、故未列入的公司包括NIPPI、JRS、湖北一致魔芋（最近公告為4月股利分派）、Bangkok Starch、GSL、Novonesis（半年報訂於2026-08-20公布，建議下週追蹤）。</span>
+    </div>
+  </section>
+
+  <!-- 區塊二 -->
+  <section class="block" id="block2">
+    <div class="block-header">
+      <span class="block-num">02</span>
+      <h2>資本、品牌動向與商業護城河</h2>
+    </div>
+    <div class="block-sub">Capital & Brand Strategy — FMCG、餐飲龍頭、糧商與財閥的營收、併購與競爭壁壘</div>
+
+    <div class="card-grid">
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-29 <span class="tag-pill">財報</span></div>
+        <h3>Kerry Group H1 EBITDA利潤率16.7%，鎖定生技併購</h3>
+        <a class="source-link" href="https://www.investing.com/news/transcripts/earnings-call-transcript-kerry-group-lifts-volume-outlook-in-strong-h1-2026-93CH-4818879" target="_blank">Investing.com ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>H1營收€3.3bn（美元貶值致年減3.7%，量成長3.3%），EBITDA利潤率16.7%（+60bps），未來每年鎖定€100-200M生技（酵素、益生菌、食品保鮮）併購。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>Kerry將複雜生技研發轉化為可收費護城河，16.7% EBITDA margin可作為與其議價「技術換毛利率」的產業基準。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-30 <span class="tag-pill">財報</span></div>
+        <h3>dsm-firmenich H1自由現金流暴增至3.2億歐元</h3>
+        <a class="source-link" href="https://www.globenewswire.com/news-release/2026/07/30/3335753/0/en/dsm-firmenich-reports-H1-2026-results.html" target="_blank">GlobeNewswire ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>H1有機成長5%（Q2達6%），EBITDA利潤率19.3%（全年展望約20%），調整後自由現金流€320M（去年同期僅€79M）。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>現金流與利潤率同步改善顯示Taste, Texture & Health部門配方溢價能力增強，19-20% EBITDA margin可作為特殊原料議價基準。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-07-23 <span class="tag-pill">財報</span></div>
+        <h3>Givaudan H1利潤率受訴訟成本壓縮至21.6%</h3>
+        <a class="source-link" href="https://www.givaudan.com/media/media-releases/2026/2026-half-year-results" target="_blank">Givaudan官網 ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>H1銷售額CHF3,799M（LFL+3.6%），EBITDA利潤率由24.5%降至21.6%，主因CHF103M訴訟與重組費用。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>龍頭香精廠亦有匯率與法遵壓力，可作為議價時評估「成本轉嫁」空間的參考依據。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-23 <span class="tag-pill">併購</span></div>
+        <h3>Symrise併購法國天然原料商Floral Concept</h3>
+        <a class="source-link" href="https://www.symrise.com/newsroom/article/symrise-signs-a-put-option-agreement-to-acquire-floral-concept/" target="_blank">Symrise Newsroom ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>擬併購格拉斯天然原料商強化上游掌控；H1銷售額€2.539bn，EBITDA利潤率21.8%，自由現金流利潤率大增450bps至13.7%，預計Q3完成交易。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>向上游整合稀缺天然原料是典型垂直護城河，預示Symrise將強化「純淨標籤」配方優勢，是未來獨家原料談判的關鍵籌碼。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-29 <span class="tag-pill">財報／併購綜效</span></div>
+        <h3>Bunge Q2營收年增88%至240億美元，Viterra綜效顯現</h3>
+        <a class="source-link" href="https://www.feedstuffs.com/agribusiness-news/soybean-processing-refining-lift-bunge-q2-2026-results" target="_blank">Feedstuffs ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>調整後EPS $2.00（去年$1.31），軟籽加工EBIT暴增近18倍至$255M，全年EPS展望上修至$9.25-9.75，Viterra綜效目標由$250M上修至$350M。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>併購後軟籽加工EBIT暴增顯示規模化對原料議價權的放大效應，與Bunge議約特殊種籽油時應留意其成本結構優勢已壓縮買方議價空間。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-30 <span class="tag-pill">財報</span></div>
+        <h3>AB InBev Q2核心EPS年增23.4%，無醇啤酒+27%</h3>
+        <a class="source-link" href="https://www.stocktitan.net/news/BUD/ab-in-bev-reports-second-quarter-2026-okxt2um3u9wp.html" target="_blank">StockTitan ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Q2營收$16.66bn（+5.6%），核心EPS $1.21（+23.4%），啤酒銷量轉正+1.1%，無酒精啤酒+27%，Beyond Beer品類+44%，但中國市場仍疲軟。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>無醇/Beyond Beer高速成長驗證健康化趨勢，是無醇釀造技術、風味遮蔽劑等原料方案向AB InBev提案的最佳切入時機。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-28 <span class="tag-pill">財報</span></div>
+        <h3>Coca-Cola Q2營收+7%，全年EPS展望上修</h3>
+        <a class="source-link" href="https://www.coca-colacompany.com/media-center/coca-cola-reports-second-quarter-2026-results" target="_blank">The Coca-Cola Company ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Q2淨營收$13.4bn（+7%），有機營收+6%（濃縮液銷量+4%、價格組合僅+2%），EPS+16%至$1.03，營業利益率34.9%。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>成長主要靠「量」而非「價」，暗示採購策略將更重視穩定供應與成本控制，是原料報價談判的重要背景資訊。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-29 <span class="tag-pill">財報</span></div>
+        <h3>Starbucks Q3同店銷售連四季正成長+7.9%</h3>
+        <a class="source-link" href="https://investor.starbucks.com/news/financial-releases/news-details/2026/Starbucks-Reports-Q3-Fiscal-Year-2026-Results/default.aspx" target="_blank">Starbucks IR ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Q3營收$9.32bn（超預期$9.16bn），EPS $0.85（超預期$0.67），同店銷售+7.9%（北美+8.1%），全年EPS展望上修至$2.55-2.65。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>門店翻新逾1000家並帶動同店成長加速，原料/香精供應商可鎖定其季節限定飲品開發週期，提前卡位下一輪風味創新提案。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-22 <span class="tag-pill">財報</span></div>
+        <h3>Oatly Q2調整後EBITDA首度轉正</h3>
+        <a class="source-link" href="https://www.investing.com/news/transcripts/earnings-call-transcript-oatly-posts-q2-2026-beat-lifts-revenue-outlook-93CH-4806031" target="_blank">Investing.com ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Q2營收$240.09M（+15.2%，超預期），毛利率33.9%（+140bps），調整後EBITDA轉正為$0.4M，全年營收展望由3-5%上修至8-10%。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>植物基龍頭轉向「效率優化」階段，原料供應商應預期其對燕麥基底/風味遮蔽等降本方案的需求將更嚴格。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026年7月底/8月初 <span class="tag-pill">資產重組</span></div>
+        <h3>Cargill剝離鐵礦砂與鋼鐵貿易部門，聚焦核心食農業務</h3>
+        <a class="source-link" href="https://gmk.center/en/news/cargill-plans-to-complete-the-sale-of-its-steel-business-by-august/" target="_blank">GMK Center ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>預計7月底至8月初完成鐵礦砂（年交易量6000-7000萬噸）與鋼鐵貿易部門出售，買家鎖定Macquarie或Gunvor，金額未揭露。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>Cargill明確剝離非核心大宗商品業務，未來資本可能加速投入特殊配料、蛋白質與農業科技領域，供應鏈夥伴應提前布局相關合作機會。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-19~21 <span class="tag-pill">跨國戰略</span></div>
+        <h3>三菱商事加碼1000億日圓食品投資，深化與ADM的SAF合作</h3>
+        <a class="source-link" href="https://www.nikkei.com/article/DGXZQOUC063V70W6A700C2000000/" target="_blank">日本経済新聞 ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>社長中西勝也宣布投資約1000億日圓於食品事業，與ADM於美國、巴西合資港口倉儲及物流設施，評估以大豆、玉米生產永續航空燃料，目標2030年穀物處理量提升至現有1.5倍（約3000萬噸）。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>財閥資本從貿易轉向穀物基礎設施與SAF垂直整合，原料採購應提前評估與三菱商事系統合作或替代供應源的必要性。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-03～07-20 <span class="tag-pill">新品／護城河</span></div>
+        <h3>明治以IP聯名新品（たまごっち、Toy Story 5）搶攻夏季冰品市場</h3>
+        <a class="source-link" href="https://www.meiji.co.jp/corporate/pressrelease/2026/07_03/index.html" target="_blank">明治株式会社 ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>推出「うずまきソフト」（たまごっち聯名）、エッセル スーパーカップ カフェオレ&クッキー（194日圓）及Toy Story 5聯名冷凍優格，延續FY2026營收1兆1,736億円、營業利益+10.2%後的品項擴張策略。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>明治以低成本IP聯名維持貨架佔有率，研發對接應著重「快速改版包裝/限定口味」的敏捷打樣能力，而非長週期基礎研發。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-15 <span class="tag-pill">品牌策略</span></div>
+        <h3>Takasago攜手Handcraft Entertainment打造J-Pop感官IP</h3>
+        <a class="source-link" href="https://www.digitalmusicnews.com/2026/07/16/takasago-handcraft-j-pop-partnership/" target="_blank">Digital Music News ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Takasago USA結合香精香料與感官科學專長，為J-Pop藝人（首發Mia Takarabe）開發香氛、風味與消費性產品，延伸至體驗式活動與品牌聯名。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>以「文化IP+感官科學」包裝技術成粉絲經濟敘事，是研發成果轉譯為終端可收費品牌價值的範例，可作為向終端品牌推銷客製化風味方案的敘事模板。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">2026-07-08 <span class="tag-pill">財報</span></div>
+        <h3>吉野家HD Q1經常利益年增2.3倍，牛丼組合餐帶動客單價</h3>
+        <a class="source-link" href="https://www.nikkei.com/article/DGXZQOFL091320Z00C26A7000000/" target="_blank">日本経済新聞 ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>FY2027第1季（3-5月）連結經常利益27.9億円（+2.3倍），全社既存店銷售+9.8%（吉野家品牌+11.0%），主要受惠「牛丼・油そばセット」熱賣。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>高單價組合餐帶動獲利倍增，顯示日本餐飲通路正以「組合式菜單」提升客單價，複合調味料包具有較高B2B配方開發潛力。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-18 <span class="tag-pill">新品</span></div>
+        <h3>Hormel推出Pepperoni Snack Bites，延伸至冷藏高蛋白零食</h3>
+        <a class="source-link" href="https://www.sahmcapital.com/news/content/how-hormels-new-pepperoni-snack-bites-launch-will-impact-hormel-foods-hrl-investors-2026-07-18" target="_blank">Sahm Capital ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>推出「HORMEL Pepperoni Snack Bites」冷藏即食蛋白零食（原味/帕瑪森/蒔蘿酸黃瓜），延續SPAM、Planters「跳脫原有品類」策略，透過零售熟食/冷藏零食貨架銷售。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用</div><p>Hormel品牌溢價護城河建立在「百年信任品牌+品類延伸能力」，代表其對即食化、風味穩定性配方的採購需求正在增加。</p></div>
+      </div>
+
+    </div>
+
+    <div class="weekly-summary">
+      本週為歐美食品資本市場財報密集週，Kerry、DSM-Firmenich、Symrise、Bunge、Coca-Cola、Starbucks、AB InBev、Oatly均交出優於預期成績，普遍呈現「量增而非價漲」與利潤率修復並存的格局；併購動向轉向聚焦核心（Cargill剝離鋼鐵貿易、Symrise補強天然原料）；日系財閥（三菱商事）加碼穀物基礎設施與SAF垂直整合；終端品牌則以IP聯名（明治）與品類延伸（Hormel）作為低成本護城河策略。
+      <br><br>
+      <span style="color:var(--text-dim);font-size:12px;">說明：ADM、IFF正式Q2財報將於8月4日公布（超出本週窗口）。Novonesis、日清食品、日本ハム、味の素、蜜雪集團、霸王茶姬、中糧集團、松屋、三井物産、住友商事、丸紅、Danish Crown經查證過去7-30日內無具體可驗證財務/併購新訊息，故未強行列入。</span>
+    </div>
+  </section>
+
+  <!-- 區塊三 -->
+  <section class="block" id="block3">
+    <div class="block-header">
+      <span class="block-num">03</span>
+      <h2>終端通路與宏觀跨界新知</h2>
+    </div>
+    <div class="block-sub">Retail & Macro Insights — 零售、外送與總體經濟趨勢，及其對食品研發業務的跨界啟發</div>
+
+    <div class="card-grid">
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-08-01 <span class="tag-pill">物流成本</span></div>
+        <h3>貨櫃運價「先跌後漲」拉鋸：8月調漲前夕現貨價再度走軟</h3>
+        <a class="source-link" href="https://www.globaltrademag.com/container-freight-rates-slip-again-as-carriers-cut-prices-ahead-of-august-rate-hikes/" target="_blank">Global Trade Magazine ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>上海—鹿特丹線現貨運價週跌3%至4,677美元/40呎櫃，但MSC等船公司已宣布8/15生效的FAK漲價（亞洲—北歐目標7,800美元/FEU），現貨市場陷入「跌價出貨衝量」與「漲價保利」拉鋸。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>船公司「先降價清艙、後漲價鎖利」的節奏，啟發原料報價談判——供應商漲價公告前的短暫降價期，正是鎖定長約、談判到岸成本的最佳窗口。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-30 <span class="tag-pill">通路擴張</span></div>
+        <h3>Uber Eats擴大生鮮雜貨版圖，新增多家美國區域型超市</h3>
+        <a class="source-link" href="https://finance.yahoo.com/markets/stocks/articles/uber-eats-expands-grocery-164412466.html" target="_blank">Yahoo Finance ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>新增Busch's、Hays、Lowe's Market、Marc's、Piggly Wiggly等區域超市上架，延續與Ahold Delhaize（近2,000家門市）的合作，平台策略從「餐飲外送」轉向「每週生鮮採購」高頻場景。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>捨一線龍頭轉攻區域超市長尾客戶，是「農村包圍城市」的降維打擊思維——可比照優先鎖定尚未被大型通路綁定的區域型/獨立通路，搶占供應鏈卡位權。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-30 <span class="tag-pill">逆勢擴張</span></div>
+        <h3>Sam's Club田納西州新店開幕，2026年新開第7家倉儲店</h3>
+        <a class="source-link" href="https://eciks.org/11889-12956-sams-club-seven-new-stores-2026-expansion" target="_blank">eciks ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>原訂2026年新開6家門市的計畫加碼至7家，會員制倉儲通路逆勢擴張，對沖一般零售消費疲軟。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>訂閱制忠誠客群具抗景氣循環韌性——可轉化為B2B通路合作條款設計，例如以年約/預付訂單綁定取代單筆採購，降低雙方需求波動風險。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-07-28 <span class="tag-pill">法律風險</span></div>
+        <h3>Costco「關稅退款」集體訴訟成新變數，評等維持買進</h3>
+        <a class="source-link" href="https://simplywall.st/stocks/us/consumer-retailing/nasdaq-cost/costco-wholesale/news/costco-lawsuit-puts-tariff-refund-policy-and-rich-stock-valu" target="_blank">Simply Wall St News ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Telsey Advisory維持Costco買進評等，但會員對「關稅退款以未來降價而非現金返還」的分配方式提告，凸顯其「內部吸收成本、不轉嫁會員」的定價哲學面臨法律挑戰。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>Costco「吸收成本、以降價回饋取代現金賠付」的立場，啟發B2B報價談判——以「未來訂單價格優惠」取代一次性折讓退款，既維持毛利結構也強化長期合作黏著度。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-07-28 <span class="tag-pill">宏觀數據</span></div>
+        <h3>USDA展望：2026食品價格漲3.1%，牛肉飆漲、雞蛋崩跌</h3>
+        <a class="source-link" href="https://www.hoosieragtoday.com/2026/07/28/usda-july-2026-food-price-outlook/" target="_blank">Hoosier Ag Today ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>2026全年食品價格上漲3.1%（家庭端2.7%、外食端3.5%）；牛肉年增近12%創新高，雞蛋因去年高基期預估全年下跌31%，品類間分化劇烈。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>品類間漲跌互見，啟發產品線組合策略——研發可主動下修高漲價蛋白質（牛肉）配方比例，轉向替代或降價品類（蛋、禽肉），用配方彈性對沖採購成本波動。</p></div>
+      </div>
+
+      <div class="card tag-risk">
+        <div class="card-date">2026-07-16 <span class="tag-pill">併購／版圖整併</span></div>
+        <h3>Uber以148億美元收購Delivery Hero，外送版圖擴至近百市場</h3>
+        <a class="source-link" href="https://www.bloomberg.com/news/articles/2026-07-16/uber-agrees-to-buy-delivery-hero-as-food-sector-consolidates" target="_blank">Bloomberg ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Uber以每股41.50歐元現金收購Delivery Hero（foodpanda母公司），股權價值148億美元，合併版圖涵蓋近100個市場；為過反壟斷審查，Delivery Hero同步出售14個市場業務予SSW Partners（約16億美元）。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>外送龍頭透過收購快速取得區域品牌通路而非從零建立——啟發海外市場進入策略：優先評估併購/策略入股區域經銷商，用「買時間」換取更快的市占滲透速度。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-10 <span class="tag-pill">定價策略</span></div>
+        <h3>Walmart加碼生鮮降價，單品最高降幅逾60%</h3>
+        <a class="source-link" href="https://eciks.org/13414-67231-wmt-stock-price-gain-july-2026" target="_blank">eciks ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>甜玉米從0.68美元降至0.25美元、可口可樂24入裝從14.97美元降至9.97美元，股價於7/10應聲上漲1.5%，市場解讀為對抗消費緊縮的正面訊號。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>「戰略性單品讓利」換取整體客流與信任，而非全面漲價轉嫁成本——啟發B2B報價談判可採「明星單品讓利、組合品項補利潤」的分層定價模型。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-09 <span class="tag-pill">異業合作</span></div>
+        <h3>Sam's Club攜手Weight Watchers推健康會員福利，含GLP-1支援</h3>
+        <a class="source-link" href="https://corporate.walmart.com/about/samsclub/news/2026/07/09/Sams-Club-and-Weight-Watchers-Collaborate-to-Expand-Access-to-Affordable-Holistic-Wellness-Experiences-for-Members" target="_blank">Walmart Corporate Newsroom ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>Plus會員享3個月免費Weight Watchers Core會籍（後續10美元/月），一般會員享Core+/Med+方案5折，對接GLP-1減重藥物熱潮下的健康管理需求。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>零售巨頭將「體重管理生態系」納入會員權益而非止於商品銷售，啟發GLP-1/低卡產品線布局時應同步思考與通路會員福利、健康管理服務綁定的異業合作模式。</p></div>
+      </div>
+
+      <div class="card tag-opportunity">
+        <div class="card-date">2026-07-06 <span class="tag-pill">定價策略</span></div>
+        <h3>Walmart與Sam's Club聯合宣布夏季大規模降價</h3>
+        <a class="source-link" href="https://corporate.walmart.com/news/2026/07/06/walmart-and-sams-club-lower-prices-to-help-customers-make-the-most-out-of-summer" target="_blank">Walmart Corporate Newsroom ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>兩品牌同步祭出Rollback與會員專屬折扣，強化「低價領導者」定位，對抗消費者因關稅推升物價而縮手的觀望心理。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>雙品牌同步降價展現「多品牌矩陣分層防禦」打法——若同時服務不同定位客戶，也應設計差異化配方/包裝規格，避免同一產品在不同通路互相蠶食。</p></div>
+      </div>
+
+      <div class="card tag-data">
+        <div class="card-date">展望2026-08-03 <span class="tag-pill">財報預告</span></div>
+        <h3>Grab週一將公布Q2財報，市場預期營收年增22.3%</h3>
+        <a class="source-link" href="https://www.marketbeat.com/instant-alerts/grab-grab-to-announce-earnings-on-monday-2026-07-27/" target="_blank">MarketBeat ↗</a>
+        <div class="card-block summary"><div class="label">硬核摘要</div><p>分析師預估Q2 EPS持平於0.01美元、營收年增22.3%至10億美元，GrabMart（生鮮外送）成長速度達餐飲外送的1.7倍。</p></div>
+        <div class="card-block application"><div class="label">研發型業務應用／跨界啟發</div><p>「非核心業務成長快於本業」的結構轉變，啟發研發部門盤點自身「第二曲線」品項，避免資源過度集中於成熟旗艦產品。</p></div>
+      </div>
+
+    </div>
+
+    <div class="weekly-summary">
+      通路端呈現「會員制抗景氣」與「外送平台版圖整併」雙軸線——Costco/Sam's Club逆勢展店並以降價回饋維繫會員忠誠，Walmart以單品讓利對沖關稅壓力；外送市場因Uber以148億美元收購Delivery Hero加速洗牌，平台從餐飲外送擴張至生鮮雜貨與健康管理生態系。總體經濟面，貨櫃運價陷入「跌價出貨、漲價鎖利」拉鋸，USDA示警2026食品價格漲3.1%但品類分化劇烈（牛肉飆漲、雞蛋崩跌），成本壓力仍將逐季透過關稅傳導至終端貨架。
+    </div>
+  </section>
+
+</main>
+
+<div class="nav-float">
+  <div class="nav-btn b1" onclick="document.getElementById('block1').scrollIntoView({behavior:'smooth'})">原料<br>科學</div>
+  <div class="nav-btn b2" onclick="document.getElementById('block2').scrollIntoView({behavior:'smooth'})">資本<br>品牌</div>
+  <div class="nav-btn b3" onclick="document.getElementById('block3').scrollIntoView({behavior:'smooth'})">通路<br>宏觀</div>
+  <div class="nav-btn top" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</div>
+</div>
+
+<footer>
+  全球食品產業鏈極限週報 · 資料更新日期 2026-08-02 · 由三組 Subagent 分別針對原料科學、資本品牌、通路宏觀進行過去7天深度追蹤彙整<br>
+  本報告所有連結與數據均來自公開新聞來源，如涉及財務決策請以官方公告為準
+</footer>
+
+</body>
+</html>
